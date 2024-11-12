@@ -1,0 +1,202 @@
+/* shared.css - Updated shared styles for all pages */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1d4ed8;
+    --accent-color: #3b82f6;
+    --text-color: #1e293b;
+    --light-bg: #f8fafc;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Outfit', var(--font-primary);
+}
+
+/* Base Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Consistent Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+/* Navbar Styles - Consistent across pages */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    height: 70px; /* Fixed height for consistency */
+}
+
+.navbar-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem !important; /* Force consistent size */
+    letter-spacing: -0.5px;
+    padding: 0.5rem 0;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1rem !important; /* Force consistent size */
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.25rem;
+    color: white !important;
+    transition: var(--transition);
+    border-radius: 8px;
+}
+
+.navbar-nav .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-toggler {
+    padding: 0.5rem;
+    border: none;
+    color: white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Container Consistency */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 8px;
+    border: 3px solid var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Table Styles */
+.table-responsive {
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: white;
+}
+
+.table {
+    margin-bottom: 0;
+    font-family: var(--font-primary);
+}
+
+.table thead th {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 1rem;
+    border-bottom: none;
+}
+
+.table tbody td {
+    font-size: 0.95rem;
+    padding: 1rem;
+    vertical-align: middle;
+    font-family: var(--font-primary);
+}
+
+/* Consistent Button Styles */
+.btn {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.3);
+}
+
+.btn-sm {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Form Styles */
+.form-label {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-control {
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    border-radius: 8px;
+    padding: 0.625rem 1rem;
+}
+
+/* Modal Styles */
+.modal-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto; /* Allow height to adjust on mobile */
+    }
+    
+    .navbar-collapse {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        padding: 1rem;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+}
